@@ -16,8 +16,8 @@
                     <img src="logo.png" alt="">
                 </span>
                 <div class="text logo-text">
-                    <span class="name">Selene</span>
-                    <span class="profession">Profesor</span>
+                    <span class="name">{{ auth()->user()->nombre }}</span>
+                    <span class="profession">{{ auth()->user()->tipo_usuario }}</span>
                 </div>
             </div>
             <i class='fa-solid fa-caret-right toggle'></i>
@@ -75,7 +75,7 @@
             </div>
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="{{route('login.destroy')}}">
                         <i class="fa-solid fa-right-from-bracket icon"></i>
                         <span class="text nav-text">Cerrar Sesión</span>
                     </a>
@@ -96,6 +96,9 @@
     </nav>
     <section class="home">
         <div class="text">Ignacio Zaragoza</div>
+        <div class="general-container">
+			@yield('content')
+		</div>
     </section>
     <script src="{{asset('JS/layout.js')}}"></script>
 </body>

@@ -9,7 +9,7 @@
     <body>
         <div class="general-container">
             <div class="form">
-                <form class="" action="/login" method="POST">
+                <form class="" action="/" method="POST">
                     @csrf
                     <div class="icon">
                         <i id="icon" class="fa-solid fa-graduation-cap"></i>
