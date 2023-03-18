@@ -13,14 +13,55 @@ class UsuariosSeeder extends Seeder
     public function run(): void
     {
         DB::table('usuarios')->insert([
-            'nombre' => 'elthon',
-            'apellido_paterno' => 'arevalo',
-            'apellido_materno' => 'esquinca',
-            'fecha_nacimiento' => '12-01-2000',
+            'foto' => 'profesor.jpg',
+            'nombre' => 'Antonio',
+            'apellido_paterno' => 'Muñoz',
+            'apellido_materno' => 'Garcia',
+            'fecha_nacimiento' => '2000-01-2',
             'correo_electronico' => 'prueba@gmail.com',
             'contraseña' =>bcrypt('1234'),
-            'telefono' => '1234567890',
-            'tipo_usuario' => 'Profesor',
+            'telefono' => '961 000 00000',
+            'sexo' => 'Hombre',
+            'tipo_usuario' => 'Director',
+            'estatus' => 'Activo',
+        ]);
+        DB::table('usuarios')->insert([
+            'foto' => 'profesora.jpg',
+            'nombre' => 'Elizabeth',
+            'apellido_paterno' => 'Salgado',
+            'apellido_materno' => 'Perez',
+            'fecha_nacimiento' => '2001-01-20',
+            'correo_electronico' => 'prueba1@gmail.com',
+            'contraseña' =>bcrypt('1234'),
+            'telefono' => '961 000 00000',
+            'sexo' => 'Mujer',
+            'tipo_usuario' => 'Subdirector',
+            'estatus' => 'Activo',
+        ]);
+        DB::table('usuarios')->insert([
+            'foto' => 'profesor.jpg',
+            'nombre' => 'Alberto',
+            'apellido_paterno' => 'Muñoz',
+            'apellido_materno' => 'Garcia',
+            'fecha_nacimiento' => '1980-01-20',
+            'correo_electronico' => 'prueba2@gmail.com',
+            'contraseña' =>bcrypt('1234'),
+            'telefono' => '961 000 00000',
+            'sexo' => 'Hombre',
+            'tipo_usuario' => 'Director',
+            'estatus' => 'Activo',
+        ]);
+        DB::table('usuarios')->insert([
+            'foto' => 'profesora.jpg',
+            'nombre' => 'Frida Sofia',
+            'apellido_paterno' => 'Paez',
+            'apellido_materno' => 'Rios',
+            'fecha_nacimiento' => '1999-02-01',
+            'correo_electronico' => 'prueba3@gmail.com',
+            'contraseña' =>bcrypt('1234'),
+            'telefono' => '961 000 00000',
+            'sexo' => 'Mujer',
+            'tipo_usuario' => 'Subdirector',
             'estatus' => 'Activo',
         ]);
     }

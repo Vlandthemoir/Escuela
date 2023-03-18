@@ -1,6 +1,8 @@
 @extends('Layouts.Layout')
 
-@section('title,Home')
+@section('title')
+Inicio
+@endsection
 
 @push('styles')
 	<link href="" rel="stylesheet">

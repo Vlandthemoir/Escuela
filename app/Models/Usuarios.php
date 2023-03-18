@@ -10,6 +10,7 @@ class Usuarios extends Authenticatable
 {
     use HasFactory;
     protected $fillable = [
+        'foto',
         'nombre',
         'apellido_paterno',
         'apellido_materno',
@@ -17,6 +18,7 @@ class Usuarios extends Authenticatable
         'correo_electronico',
         'contraseña',
         'telefono',
+        'sexo',
         'tipo_usuario',
         'estatus',
     ];
