@@ -48,7 +48,7 @@ class UsuariosSeeder extends Seeder
             'contraseña' =>bcrypt('1234'),
             'telefono' => '961 000 00000',
             'sexo' => 'Hombre',
-            'tipo_usuario' => 'Director',
+            'tipo_usuario' => 'Profesor',
             'estatus' => 'Activo',
         ]);
         DB::table('usuarios')->insert([
@@ -61,7 +61,59 @@ class UsuariosSeeder extends Seeder
             'contraseña' =>bcrypt('1234'),
             'telefono' => '961 000 00000',
             'sexo' => 'Mujer',
-            'tipo_usuario' => 'Subdirector',
+            'tipo_usuario' => 'Profesor',
+            'estatus' => 'Activo',
+        ]);
+        DB::table('usuarios')->insert([
+            'foto' => 'profesor.jpg',
+            'nombre' => 'Roberto',
+            'apellido_paterno' => 'Ocaña',
+            'apellido_materno' => 'Garcia',
+            'fecha_nacimiento' => '1980-01-20',
+            'correo_electronico' => 'prueba4@gmail.com',
+            'contraseña' =>bcrypt('1234'),
+            'telefono' => '961 000 00000',
+            'sexo' => 'Hombre',
+            'tipo_usuario' => 'Profesor',
+            'estatus' => 'Activo',
+        ]);
+        DB::table('usuarios')->insert([
+            'foto' => 'profesora.jpg',
+            'nombre' => 'Julia',
+            'apellido_paterno' => 'Estefan',
+            'apellido_materno' => 'Rios',
+            'fecha_nacimiento' => '1999-02-01',
+            'correo_electronico' => 'prueba5@gmail.com',
+            'contraseña' =>bcrypt('1234'),
+            'telefono' => '961 000 00000',
+            'sexo' => 'Mujer',
+            'tipo_usuario' => 'Profesor',
+            'estatus' => 'Activo',
+        ]);
+        DB::table('usuarios')->insert([
+            'foto' => 'profesor.jpg',
+            'nombre' => 'Luis',
+            'apellido_paterno' => 'Guzman',
+            'apellido_materno' => 'Garcia',
+            'fecha_nacimiento' => '1980-01-20',
+            'correo_electronico' => 'prueba6@gmail.com',
+            'contraseña' =>bcrypt('1234'),
+            'telefono' => '961 000 00000',
+            'sexo' => 'Hombre',
+            'tipo_usuario' => 'Profesor',
+            'estatus' => 'Activo',
+        ]);
+        DB::table('usuarios')->insert([
+            'foto' => 'profesora.jpg',
+            'nombre' => 'Selene',
+            'apellido_paterno' => 'Esquinca',
+            'apellido_materno' => 'Rios',
+            'fecha_nacimiento' => '1999-02-01',
+            'correo_electronico' => 'prueba7@gmail.com',
+            'contraseña' =>bcrypt('1234'),
+            'telefono' => '961 000 00000',
+            'sexo' => 'Mujer',
+            'tipo_usuario' => 'Profesor',
             'estatus' => 'Activo',
         ]);
     }

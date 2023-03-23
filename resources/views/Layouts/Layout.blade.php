@@ -44,6 +44,12 @@
                         </a>
                     </li>
                     <li class="nav-link">
+                        <a href="{{route('grupos.index')}}">
+                            <i class="fa-solid fa-a icon"></i>
+                            <span class="text nav-text">Grupos</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
                         <a href="{{route('usuarios.index')}}">
                             <i  class="fa-solid fa-users icon"></i>
                             <span class="text nav-text">Personal</span>

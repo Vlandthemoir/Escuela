@@ -11,7 +11,7 @@ Personal
         @csrf
         @method("PUT")
         <label for=""><b>Foto de perfil</b></label>
-        <input type="file" name="foto" value="{{$usuarios->nombre}}>
+        <input type="file" name="foto" value="{{$usuarios->nombre}}">
         <label for=""><b>Nombre</b></label>
         <input type="text" placeholder="Nombre(S)" name="nombre" value="{{$usuarios->nombre}}">
         <label for=""><b>Apellido Paterno</b></label>

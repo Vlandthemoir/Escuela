@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsuariosController;
-
+use App\Http\Controllers\GruposController;
 /*rutas de prueba*/
 Route::get('/layout', function () {
     return view('Layouts.Layout');
@@ -44,3 +44,22 @@ Route::put('/usuarios-update/{id}', [UsuariosController::class, 'update'])
 Route::delete('/usuarios-delete/{id}',[UsuariosController::class,'destroy'])
 ->middleware('auth')
 ->name('usuarios.delete');
+/*rutas para los grupos*/
+Route::get('/grupos', [GruposController::class, 'index'])
+->middleware('auth')
+->name('grupos.index');
+Route::get('/grupos-create', [GruposController::class, 'create'])
+->middleware('auth')
+->name('grupos.create');
+Route::post('/grupos-store', [GruposController::class, 'store'])
+->middleware('auth')
+->name('grupos.store');
+Route::get('/grupos-edit/{id}', [GruposController::class, 'edit'])
+->middleware('auth')
+->name('grupos.edit');
+Route::put('/grupos-update/{id}', [GruposController::class, 'update'])
+->middleware('auth')
+->name('grupos.update');
+Route::delete('/grupos-delete/{id}',[GruposController::class,'destroy'])
+->middleware('auth')
+->name('grupos.delete');
