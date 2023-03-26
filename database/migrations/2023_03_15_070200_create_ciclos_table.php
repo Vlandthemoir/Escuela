@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('ciclos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
             $table->string('fecha_inicio');
             $table->string('fecha_fin');
+            $table->string('estado');
             $table->timestamp('fecha_creado')->nullable();
             $table->timestamp('fecha_modificado')->nullable();
         });

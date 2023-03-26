@@ -9,9 +9,9 @@ class Ciclos extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nombre',
         'fecha_inicio',
         'fecha_fin',
+        'estado',
     ];
     //sobreescritura de las convenciones
     protected $table = 'ciclos';

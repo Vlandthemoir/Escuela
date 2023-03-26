@@ -1,0 +1,156 @@
+:root{
+    --body-color: #B0B4B8;
+    --sidebar-color: #FFF;
+    --primary-color: #579647;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #000;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family:sans-serif;
+    margin: 0;
+    padding: 3rem;
+}
+.general-container {
+    display: grid;
+    padding: 3rem;
+    grid-template-columns: repeat(auto-fit, 17rem);
+    gap: 2rem;
+}
+.card {
+    position: relative;
+    height: 26rem;
+    background-color: lightGrey;
+    overflow-y: hidden;
+    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+}
+.card .title {
+    margin: 0;
+    display: block;
+    background-color: #fff;
+    padding: .70rem;
+    transform: translate3d(0, -100%, 0);
+    transition: transform 300ms;
+    border-radius:.25rem .25rem 0 0;
+}
+.title h3{
+    margin:0;
+    font-size:1rem;
+}
+.title p{
+    margin:0;
+    font-size:.80rem;
+}
+.card a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.card a:hover ~ .card-overlay, .card a:focus ~ .card-overlay {
+    transform: translate3d(0, 0, 0);
+}
+.card a:hover ~ .card-overlay .title, .card a:focus ~ .card-overlay .title {
+    transform: translate3d(0, 0, 0);
+}
+.card a:hover ~ .card-overlay .card-body, .card a:focus ~ .card-overlay .card-body {
+    opacity: 1;
+}
+img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.card-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    transition: transform 300ms;
+    background-color:#C1C1C1;
+    transform: translate3d(0, 100%, 0);
+}
+.card-body {
+    flex-grow: 1;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 500ms 100ms;
+}
+.card-body p {
+    margin: 0;
+    text-align: justify;
+}
+/*solucion temporal*/
+
+
+/*card add*/
+.card-add {
+    position: relative;
+    height: 26rem;
+    background-color: white;
+    overflow-y: hidden;
+    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+}
+.card-add a{
+    cursor: pointer;
+}
+.card-add div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border: .5rem dashed var(--primary-color);
+    padding: 6.5rem 3rem 6.5rem 3rem;
+    border-radius: 5%;
+}
+.card-add div a i {
+    font-size: 8rem;
+    color: var(--primary-color);
+}
+
+/*buttons contaienr*/
+.buttons-container{
+    display: flex;
+    margin: 1rem;
+    margin-left: 4rem;
+}
+.buttons-container form {
+    margin: .25rem;
+}
+.buttons-container form button{
+    background-color:white;
+    padding:1rem;
+    color: black;
+    border-radius: 100%;
+    transition-duration:0.4s;
+    cursor:pointer;
+    width:100%;
+    text-decoration:none;
+    font-size:1.5rem;
+}
+#delete {
+    border: .25rem solid red;
+}
+#delete:hover {
+    background-color:red;
+    color:white;
+}
+#update {
+    border: .25rem solid #005FFF;
+}
+#update:hover {
+    background-color:#005FFF;
+    color:white;
+}

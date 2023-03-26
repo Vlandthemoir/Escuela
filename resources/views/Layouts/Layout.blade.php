@@ -39,6 +39,12 @@
                     </li>
                     <li class="nav-link">
                         <a href="#">
+                            <i  class="fa-solid fa-school icon"></i>
+                            <span class="text nav-text">Escuela</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{route('ciclo.index')}}">
                             <i  class="fa-solid fa-calendar-days icon"></i>
                             <span class="text nav-text">Ciclo Escolar</span>
                         </a>

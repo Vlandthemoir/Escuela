@@ -3,62 +3,54 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Ciclos;
 class CicloEscolarController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $datos = Ciclos::all();
+        return view('System.Ciclo.Index',compact('datos'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('System.Ciclo.Create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $ciclos = new Ciclos();
+        $ciclos->fecha_inicio = $request->post('fecha_inicio');
+        $ciclos->fecha_fin = $request->post('fecha_fin');
+        $ciclos->estado = 'Inactivo';
+        $ciclos->save();
 
-    /**
-     * Display the specified resource.
-     */
+        return redirect()->route("ciclo.index");
+    }
     public function show(string $id)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        $ciclos = Ciclos::find($id);
+        return view("System.Ciclo.Update",compact('ciclos'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
-    }
+        $ciclos = new Ciclos();
+        $ciclos->fecha_inicio = $request->input('fecha_inicio');
+        $ciclos->fecha_fin = $request->input('fecha_fin');
 
-    /**
-     * Remove the specified resource from storage.
-     */
+        $estado_guardado = Ciclos::find($id);
+        $ciclos->estado = $estado_guardado->estado;
+
+        $ciclos->save();
+
+        return redirect()->route("ciclo.index");
+    }
     public function destroy(string $id)
     {
-        //
+        $ciclos = Ciclos::find($id);
+        $ciclos->delete();
+        return redirect()->route("ciclo.index");
     }
 }

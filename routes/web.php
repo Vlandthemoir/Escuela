@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\GruposController;
+use App\Http\Controllers\CicloEscolarController;
 /*rutas de prueba*/
 Route::get('/layout', function () {
     return view('Layouts.Layout');
@@ -44,6 +45,25 @@ Route::put('/usuarios-update/{id}', [UsuariosController::class, 'update'])
 Route::delete('/usuarios-delete/{id}',[UsuariosController::class,'destroy'])
 ->middleware('auth')
 ->name('usuarios.delete');
+/*rutas para los ciclos escolares*/
+Route::get('/ciclo', [CicloEscolarController::class, 'index'])
+->middleware('auth')
+->name('ciclo.index');
+Route::get('/ciclo-create', [CicloEscolarController::class, 'create'])
+->middleware('auth')
+->name('ciclo.create');
+Route::post('/ciclo-store', [CicloEscolarController::class, 'store'])
+->middleware('auth')
+->name('ciclo.store');
+Route::get('/ciclo-edit/{id}', [CicloEscolarController::class, 'edit'])
+->middleware('auth')
+->name('ciclo.edit');
+Route::put('/ciclo-update/{id}', [CicloEscolarController::class, 'update'])
+->middleware('auth')
+->name('ciclo.update');
+Route::delete('/ciclo-delete/{id}',[CicloEscolarController::class,'destroy'])
+->middleware('auth')
+->name('ciclo.delete');
 /*rutas para los grupos*/
 Route::get('/grupos', [GruposController::class, 'index'])
 ->middleware('auth')
