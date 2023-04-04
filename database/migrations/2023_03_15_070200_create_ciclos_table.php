@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('fecha_inicio');
             $table->string('fecha_fin');
             $table->string('estado');
+            $table->string('periodo');   
             $table->timestamp('fecha_creado')->nullable();
             $table->timestamp('fecha_modificado')->nullable();
         });

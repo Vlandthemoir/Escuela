@@ -5,21 +5,33 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Usuarios;
 use App\Models\Grupos;
+use App\Models\Ciclos;
 use Illuminate\Support\Facades\DB;
 class GruposController extends Controller
 {
     public function index()
     {
+        $ciclo = Ciclos::all()->where("estado","=","Activo");
+        $id = $ciclo->pluck("id")->first();
         $datos = Grupos::join('usuarios','grupos.id_profesor','=','usuarios.id')
             ->select('grupos.id','grupos.grado','grupos.grupo','usuarios.nombre','usuarios.apellido_paterno','usuarios.apellido_materno')
+            ->where('grupos.id_ciclo','=',$id)
             ->get();
         return view('System.Grupos.Index',compact('datos'));
     }
     public function create()
     {
-        $ocupados = DB::table('grupos')
-            ->pluck('id_profesor')
-            ->where('id_profesor','!=','Sin profesor');
+        $ciclo = Ciclos::all()->where("estado","=","Activo");
+        $id = $ciclo->pluck("id")->first();
+
+        $ocupados = Grupos::all()
+            ->where('id_ciclo','=',$id)
+            ->pluck('id_profesor');
+            
+        /*$ocupados = DB::Table('grupos')
+            ->where('id_ciclo','=',$id)
+            ->pluck('id_profesor');*/
+
         $cadena = implode(',', $ocupados->toArray());
         $array = explode(",", $cadena);
         $datos = DB::table('usuarios')
@@ -30,8 +42,11 @@ class GruposController extends Controller
     }
     public function store(Request $request)
     {
+        $ciclo = Ciclos::all()->where("estado","=","Activo");
+        $id = $ciclo->pluck("id")->first();
+
         $grupos = new Grupos();
-        $grupos->id_ciclo = "1";
+        $grupos->id_ciclo = $id;
         $grupos->id_profesor = $request->post('id_profesor');
         $grupos->grado = $request->post('grado');
         $grupos->grupo = $request->post('grupo');

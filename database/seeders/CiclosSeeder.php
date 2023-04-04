@@ -16,11 +16,13 @@ class CiclosSeeder extends Seeder
             'fecha_inicio' => '2000-01-20',
             'fecha_fin' => '2000-03-20',
             'estado' => 'Inactivo',
+            'periodo' => 'Inscripciones',
         ]);
         DB::table('ciclos')->insert([
             'fecha_inicio' => '2000-12-20',
             'fecha_fin' => '2001-03-20',
             'estado' => 'Inactivo',
+            'periodo' => 'Inscripciones',
         ]);
     }
 }

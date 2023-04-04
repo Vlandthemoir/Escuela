@@ -12,6 +12,7 @@ class Ciclos extends Model
         'fecha_inicio',
         'fecha_fin',
         'estado',
+        'periodo',
     ];
     //sobreescritura de las convenciones
     protected $table = 'ciclos';

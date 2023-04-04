@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\CicloEscolarController;
+use App\Http\Controllers\EscuelaController;
+use App\Http\Controllers\GruposController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsuariosController;
-use App\Http\Controllers\GruposController;
-use App\Http\Controllers\CicloEscolarController;
 /*rutas de prueba*/
 Route::get('/layout', function () {
     return view('Layouts.Layout');
@@ -26,6 +28,16 @@ Route::get('/home', function () {
 Route::get('/Fotos/Personal/{foto}', function ($foto) {
     return asset('/storage/Fotos/Personal/' . $foto);
 });
+/*rutas para la escuela*/
+Route::get('/escuela', [EscuelaController::class, 'index'])
+->middleware('auth')
+->name('escuela.index');
+Route::put('/escuela-update/{id}', [EscuelaController::class, 'update'])
+->middleware('auth')
+->name('escuela.update');
+Route::post('/escuela-change', [EscuelaController::class, 'change'])
+->middleware('auth')
+->name('escuela.change');
 /*rutas para el personal*/
 Route::get('/usuarios', [UsuariosController::class, 'index'])
 ->middleware('auth')

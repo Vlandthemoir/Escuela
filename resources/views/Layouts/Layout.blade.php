@@ -38,7 +38,7 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="{{route('escuela.index')}}">
                             <i  class="fa-solid fa-school icon"></i>
                             <span class="text nav-text">Escuela</span>
                         </a>
@@ -65,12 +65,6 @@
                         <a href="#">
                             <i  class="fa-solid fa-children icon"></i>
                             <span class="text nav-text">Estudiantes</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#">
-                            <i  class="fa-solid fa-chart-line icon"></i>
-                            <span class="text nav-text">Estadisticas</span>
                         </a>
                     </li>
                 @endif
